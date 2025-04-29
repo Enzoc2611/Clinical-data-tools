@@ -1,6 +1,7 @@
-### Arborescence github -----
+# Script de création de l'arborescence du projet clinical-data-tool ----
+# Inclut des fichiers .gitkeep pour permettre l'affichage sur GitHub
 
-# Création de l'arborescence complète
+# Liste des dossiers à créer
 folders <- c(
   "statistical_analysis/tests/normality",
   "statistical_analysis/tests/parametric",
@@ -16,5 +17,13 @@ folders <- c(
   "deep_learning",
   "template_algorithms"
 )
-# Création récursive des dossiers
-for (folder in folders) dir.create(folder, recursive = TRUE)
+
+# Création récursive des dossiers + fichier .gitkeep dans chacun
+for (folder in folders) {
+  dir.create(folder, recursive = TRUE, showWarnings = FALSE)
+  file.create(file.path(folder, ".gitkeep"))
+}
+
+source("Arborescence-clinical-data-tools.R")
+
+
